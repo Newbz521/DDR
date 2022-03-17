@@ -10,6 +10,8 @@ let plays = [];
 let points = document.querySelector(".points")
 let leftArm = document.querySelector(".leftArm")
 let rightArm = document.querySelector(".rightArm")
+let previous = document.querySelector(".previousScore")
+let face = document.querySelector(".head")
 console.log(leftArm)
 // let gamePlays = [];
 
@@ -18,7 +20,7 @@ document.addEventListener('keydown', function(e) {
       case 37:
       // console.log('left');
       if (plays.length < 4) {
-        plays.push("left");
+        plays.push("⬅");
         let x = document.createElement('div')
         x.classList.add("left")
         x.innerText = "⬅"
@@ -27,25 +29,29 @@ document.addEventListener('keydown', function(e) {
       }
       // moveLeft -= 1;
       leftArm.style = "animation: leftArmMoveDanceLeft 2s ease-in-out forwards infinite;"
-      rightArm.style =  "animation: rightArmMoveDanceLeft 2s ease-in-out forwards infinite;"
+      rightArm.style = "animation: rightArmMoveDanceLeft 2s ease-in-out forwards infinite;"
+      // face.style = "background-image: url(/putin1.png);"
+      // face.style = "background-size: cover;"
           break;
 
       case 39:
       // console.log('right');
       if (plays.length < 4) {
-        plays.push("right");
+        plays.push("➡");
         let x = document.createElement('div')
         x.classList.add("right")
         x.innerText = "➡"
         playField.appendChild(x)}
         leftArm.style = "animation: leftArmMoveDanceRight 2s ease-in-out forwards infinite;"
-        rightArm.style =  "animation: rightArmMoveDanceRight 2s ease-in-out forwards infinite;"
+      rightArm.style = "animation: rightArmMoveDanceRight 2s ease-in-out forwards infinite;"
+      // face.style = "background-image: url(/putin2.png);"
+      // face.style = "background-size: 100%;"
       break;
     
       case 38:
       // console.log('up');
       if (plays.length < 4) {
-        plays.push("up");
+        plays.push("⬆");
         let x = document.createElement('div')
         x.classList.add("up")
         x.innerText = "⬆"
@@ -57,7 +63,7 @@ document.addEventListener('keydown', function(e) {
       case 40:
       // console.log('down');
       if (plays.length < 4) {
-        plays.push("down");
+        plays.push("⬇");
         let x = document.createElement('div')
         x.classList.add("down")
         x.innerText = "⬇"
@@ -77,7 +83,7 @@ document.addEventListener('keydown', function(e) {
       console.log(plays)
       for (let i = 0; i < 4; i++) {
         remove()
-        checkScore()
+        // checkScore()
       }
          break;
   }
@@ -91,29 +97,22 @@ let timeCount = function () {
 
 let timeDrop = function () {
   time -= 1
-  // console.log(time)
 }
 
 let startTimer = function () {
   timeCount()
   // setInterval(function () { timer.style = "animation: shrink 20s;" }, 20000 )
-  setInterval(function () { console.log("your Score =" + counter) }, 20000)
+  setInterval(function () { previous.innerText = counter }, 20000)
   setInterval(function(){counter = 0}, 20000)
 }
 
 startTimer()
 
-if (time === 0) {
-  alert("GAMEOVER")
-}
 
-let checkScore = function () {
-  if (counter === 5) {
-  }
-}
+
 console.log(plays)
 
-let choices = ["left", "right", "up", "down"]
+let choices = ["⬅", "➡", "⬆", "⬇"]
 
 let remove = function () {
   playField.removeChild(playField.lastElementChild)
@@ -155,12 +154,12 @@ let isEqaul = (arrOne, arrTwo) => {
   }
 
   if (equal) {
-    console.log("plus one point");
+    // console.log("plus one point");
     counter++ 
     points.innerText = `${counter}`
     console.log(counter)
   } else {
-    console.log("minus one point");
+    // console.log("minus one point");
     counter--
     points.innerText = `${counter}`
   }
