@@ -150,7 +150,11 @@ function shuffle(array) {
 
   // return array;
   for (let i = 0; i< array.length; i++) {
-    game.innerText += (array[i])
+    // game.innerText += (array[i])
+    let createGame = document.createElement("div")
+    createGame.classList.add("gamePlays")
+    createGame.innerText = array[i]
+    game.appendChild(createGame)
   }
 }
 
