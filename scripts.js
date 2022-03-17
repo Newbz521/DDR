@@ -105,6 +105,7 @@ let bestScore = function () {
   scores.sort();
   previous.innerText = scores[scores.length - 1]
   console.log(scores)
+  // setTimeout()
 }
 setInterval(bestScore(), 20000)
 
@@ -113,6 +114,8 @@ let startTimer = function () {
   // setInterval(function () { previous.innerText = counter }, 20000)
   setInterval(bestScore, 20000)
   setInterval(function () { counter = 0 }, 20000)
+  setInterval(function () { scores.shift();}, 40000)
+  
 }
 
 // setInterval(function () { scores.shift() }, 40000)

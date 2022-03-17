@@ -100,7 +100,7 @@ body {
   width: 140px;
   height: 140px;
   /* border: 1px solid black; */
-  background-image: url(/putin.png);
+  background-image: url(putin.png);
   background-position: center;
   background-size: cover;
   position: relative;
