@@ -21,6 +21,7 @@ document.addEventListener('keydown', function(e) {
         plays.push("left");
         let x = document.createElement('div')
         x.classList.add("left")
+        x.innerText = "⬅"
         playField.appendChild(x)
       
       }
@@ -35,6 +36,7 @@ document.addEventListener('keydown', function(e) {
         plays.push("right");
         let x = document.createElement('div')
         x.classList.add("right")
+        x.innerText = "➡"
         playField.appendChild(x)}
         leftArm.style = "animation: leftArmMoveDanceRight 2s ease-in-out forwards infinite;"
         rightArm.style =  "animation: rightArmMoveDanceRight 2s ease-in-out forwards infinite;"
@@ -46,6 +48,7 @@ document.addEventListener('keydown', function(e) {
         plays.push("up");
         let x = document.createElement('div')
         x.classList.add("up")
+        x.innerText = "⬆"
         playField.appendChild(x)
       }
       leftArm.style = "animation: leftArmMoveDanceUp 2s ease-in-out forwards infinite;"
@@ -57,6 +60,7 @@ document.addEventListener('keydown', function(e) {
         plays.push("down");
         let x = document.createElement('div')
         x.classList.add("down")
+        x.innerText = "⬇"
         playField.appendChild(x)
       }
       leftArm.style = "animation: leftArmMove 2s ease-in-out forwards infinite;"
@@ -75,29 +79,36 @@ document.addEventListener('keydown', function(e) {
         remove()
         checkScore()
       }
-              break;
+         break;
   }
 });
-let time = 5
-let timer = function () {
-
-  while (time > 0) {
+let timer = document.querySelector(".timer")
+console.log(timer)
+let time = 20
+let timeCount = function () {
     setInterval(timeDrop, 1000)
-    // alert("TIMES UP, YOUR SCORE IS " + counter)
-  }
 }
-
 
 let timeDrop = function () {
-  time--
-  console.log(time)
+  time -= 1
+  // console.log(time)
 }
-// timer()
+
+let startTimer = function () {
+  timeCount()
+  // setInterval(function () { timer.style = "animation: shrink 20s;" }, 20000 )
+  setInterval(function () { console.log("your Score =" + counter) }, 20000)
+  setInterval(function(){counter = 0}, 20000)
+}
+
+startTimer()
+
+if (time === 0) {
+  alert("GAMEOVER")
+}
 
 let checkScore = function () {
   if (counter === 5) {
-    alert("YOU WIN!")
-
   }
 }
 console.log(plays)
@@ -106,6 +117,7 @@ let choices = ["left", "right", "up", "down"]
 
 let remove = function () {
   playField.removeChild(playField.lastElementChild)
+  // game.removeChild(game.lastElementChild)
 }
 
 function shuffle(array) {
