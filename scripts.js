@@ -1,17 +1,16 @@
 let robot = document.querySelector(".largeContainer")
-let moveLeft = 1;
-let moveTop = 7;
 let body = document.querySelector("body")
 let field = document.querySelector(".PlayField")
 let rows = document.querySelector(".charMovement")
 let playField = document.querySelector(".plays")
 let game = document.querySelector(".game")
-let plays = [];
 let points = document.querySelector(".points")
 let leftArm = document.querySelector(".leftArm")
 let rightArm = document.querySelector(".rightArm")
 let previous = document.querySelector(".previousScore")
 let face = document.querySelector(".head")
+let plays = [];
+let counter = 0;
 console.log(leftArm)
 // let gamePlays = [];
 
@@ -30,8 +29,7 @@ document.addEventListener('keydown', function(e) {
       // moveLeft -= 1;
       leftArm.style = "animation: leftArmMoveDanceLeft 2s ease-in-out forwards infinite;"
       rightArm.style = "animation: rightArmMoveDanceLeft 2s ease-in-out forwards infinite;"
-      // face.style = "background-image: url(/putin1.png);"
-      // face.style = "background-size: cover;"
+
           break;
 
       case 39:
@@ -44,8 +42,7 @@ document.addEventListener('keydown', function(e) {
         playField.appendChild(x)}
         leftArm.style = "animation: leftArmMoveDanceRight 2s ease-in-out forwards infinite;"
       rightArm.style = "animation: rightArmMoveDanceRight 2s ease-in-out forwards infinite;"
-      // face.style = "background-image: url(/putin2.png);"
-      // face.style = "background-size: 100%;"
+
       break;
     
       case 38:
@@ -88,6 +85,7 @@ document.addEventListener('keydown', function(e) {
          break;
   }
 });
+
 let timer = document.querySelector(".timer")
 console.log(timer)
 let time = 20
@@ -99,16 +97,29 @@ let timeDrop = function () {
   time -= 1
 }
 
+let scores = []
+// scores.length = 2;
+
+let bestScore = function () {
+  scores.push(counter);
+  scores.sort();
+  previous.innerText = scores[scores.length - 1]
+  console.log(scores)
+}
+setInterval(bestScore(), 20000)
+
 let startTimer = function () {
   timeCount()
-  // setInterval(function () { timer.style = "animation: shrink 20s;" }, 20000 )
-  setInterval(function () { previous.innerText = counter }, 20000)
-  setInterval(function(){counter = 0}, 20000)
+  // setInterval(function () { previous.innerText = counter }, 20000)
+  setInterval(bestScore, 20000)
+  setInterval(function () { counter = 0 }, 20000)
 }
+
+// setInterval(function () { scores.shift() }, 40000)
 
 startTimer()
 
-
+// console.log(scores)
 
 console.log(plays)
 
@@ -142,7 +153,7 @@ function shuffle(array) {
 
 shuffle(choices); 
 
-let counter = 0;
+
 
 let isEqaul = (arrOne, arrTwo) => {
   let equal = true;
@@ -157,7 +168,7 @@ let isEqaul = (arrOne, arrTwo) => {
     // console.log("plus one point");
     counter++ 
     points.innerText = `${counter}`
-    console.log(counter)
+    // console.log(counter)
   } else {
     // console.log("minus one point");
     counter--
@@ -168,11 +179,11 @@ let isEqaul = (arrOne, arrTwo) => {
 
 
 let compare = function () {
-console.log(isEqaul(choices, plays))
+isEqaul(choices, plays)
     for (let i = 0; i < 8; i++) {
-      game.innerText += (choices[i] + " ");
+      game.innerText = (choices[i] + " ");
     }
-  console.log(choices)
+  // console.log(choices)
 }
 
 
