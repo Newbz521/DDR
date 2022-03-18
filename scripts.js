@@ -9,10 +9,14 @@ let leftArm = document.querySelector(".leftArm")
 let rightArm = document.querySelector(".rightArm")
 let previous = document.querySelector(".previousScore")
 let face = document.querySelector(".head")
+let eyes = document.querySelector(".eyes")
+let eyes2= document.querySelector(".eyes2")
 let plays = [];
 let counter = 0;
 console.log(leftArm)
+console.log(eyes)
 // let gamePlays = [];
+
 
 document.addEventListener('keydown', function(e) {
   switch (e.keyCode) {
@@ -39,6 +43,7 @@ document.addEventListener('keydown', function(e) {
         let x = document.createElement('div')
         x.classList.add("right")
         x.innerText = "➡"
+        // x.style = "font-size: 90px;"
         playField.appendChild(x)}
         leftArm.style = "animation: leftArmMoveDanceRight 2s ease-in-out forwards infinite;"
       rightArm.style = "animation: rightArmMoveDanceRight 2s ease-in-out forwards infinite;"
@@ -170,19 +175,29 @@ let isEqaul = (arrOne, arrTwo) => {
       equal = false;
     }
   }
+  
 
   if (equal) {
     // console.log("plus one point");
     counter++ 
     points.innerText = `${counter}`
+    eyes.style = "background: radial-gradient(hsl(145, 100%, 72%), hsl(145, 100%, 72%));"
+    eyes2.style = "background: radial-gradient(hsl(145, 100%, 72%), hsl(145, 100%, 72%));"
+    setTimeout(function () { eyes.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
+    setTimeout(function () { eyes2.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
     // console.log(counter)
   } else {
     // console.log("minus one point");
     counter--
     points.innerText = `${counter}`
+    // let eyes = document.querySelector(".eyes")
+    eyes.style = "background: radial-gradient(rgb(255, 61, 61),rgb(255, 61, 61));"
+    eyes2.style = "background: radial-gradient(rgb(255, 61, 61),rgb(255, 61, 61));"
+    setTimeout(function () { eyes.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
+    setTimeout(function () { eyes2.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
   }
 };
-
+// background: radial-gradient(#1f48fc, #4762f8);
 
 
 let compare = function () {

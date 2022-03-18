@@ -3,34 +3,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background: linear-gradient(#afb5f5, #ffffff); */
 }
 .PlayField {
   display: flex;
-  /* justify-content: center; */
-  width: 600px;
+  width: 50%;
   height: 750px;
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 2px solid black;
+  border: 8px solid #f92c85;
   flex-direction: column;
-  background-image: url(https://i2-prod.dailystar.co.uk/incoming/article26444918.ece/ALTERNATES/n615/0_Russia-Moscow-Daily-Life-10-Mar-2022.jpg);
-  background-size: cover;
+  background: linear-gradient(#e66465, #9198e5);
   opacity: 0.7;
+  border-radius: 45px;
 }
 .timer {
   display: flex;
   justify-content: center;
   align-items: center;
   float: left;
-  width: 400px;
+  width: 380px;
   justify-self: end;
-  height: 40px;
-  border: 1px solid black;
+  height: 10px;
+  /* border: 1px solid black; */
   font-size: 45px;
-  background-color: red;
-
-  /* position: absolute; */
+  background-color: rgb(255, 255, 255);
+  margin-top: 2px;
   bottom: 40px;
   animation: shrink 20s infinite;
 }
@@ -78,6 +77,7 @@ body {
   align-self: center;
   margin-top: 100px;
   margin-bottom: 100px;
+  animation: floating 2s ease-in-out infinite;
 }
 
 .character {
@@ -97,16 +97,70 @@ body {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 140px;
-  height: 140px;
-  /* border: 1px solid black; */
-  background-image: url(putin.png);
+  width: 80px;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  background: radial-gradient(#ffffff, #ffffff, #99a1f5b6);
   background-position: center;
   background-size: cover;
   position: relative;
-  border-radius: 70px;
+  border-radius: 120px 120px 75px 75px;
   margin-bottom: 0px;
   animation: headBoggle 2s ease-in-out forwards infinite;
+  box-shadow: 0 0px 20px 1px rgba(255, 255, 255, 0.8);
+}
+.face {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  background: radial-gradient(#000000b4, #000000);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  border-radius: 120px 120px 69px 69px;
+  margin-bottom: 0px;
+  /* animation: headBoggle 2s ease-in-out forwards infinite; */
+}
+.eyes {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 12px;
+  border: 0.5px solid rgb(51, 51, 51);
+  background: radial-gradient(#1f48fc, #47f891);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  border-radius: 150px 150px 120px 120px;
+  margin-bottom: 0px;
+  margin: 2px;
+  box-shadow: 0 0px 20px 0.5px rgb(105, 168, 250);
+  /* animation: headBoggle 2s ease-in-out forwards infinite; */
+}
+.eyes2 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 12px;
+  border: 0.5px solid rgb(51, 51, 51);
+  background: radial-gradient(#1f48fc, #47f891);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  border-radius: 150px 150px 120px 120px;
+  margin-bottom: 0px;
+  margin: 2px;
+  box-shadow: 0 0px 20px 0.5px rgb(105, 168, 250);
+  /* color: rgb(255, 61, 61); */
+  /* animation: headBoggle 2s ease-in-out forwards infinite; */
 }
 .upperBody {
   display: flex;
@@ -119,36 +173,41 @@ body {
 .torso {
   display: flex;
   position: relative;
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  background-color: grey;
-  border-radius: 30px 30px 30px 30px;
-  margin-left: 0px;
-  margin-right: 0px;
+  width: 80px;
+  height: 120px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  background: radial-gradient(#ffffff, #ffffff, #99a1f5b6);
+
+  border-radius: 30px 30px 120px 120px;
+  margin: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 0 0px 20px 1px rgba(255, 255, 255, 0.8);
 }
 .leftArm {
   display: flex;
   margin-top: 5px;
-  width: 25px;
+  width: 15px;
   height: 100px;
   position: relative;
-  border: 1px solid black;
-  border-radius: 50px 0 20px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  border-radius: 80px 0px 20px 80px;
   animation: leftArmMove 2s ease-in-out forwards infinite;
-  background-color: blue;
+  background: radial-gradient(#ffffff, #ffffff, #99a1f5b6);
+  box-shadow: 0 0px 20px 1px rgba(255, 255, 255, 0.8);
   z-index: 3;
 }
 .rightArm {
   display: flex;
   margin-top: 5px;
-  width: 25px;
+  width: 15px;
   height: 100px;
   position: relative;
-  border: 1px solid black;
-  border-radius: 0 50px 20px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  border-radius: 0 80px 80px 20px;
   animation: rightArmMove 2s ease-in-out forwards infinite;
-  background-color: blue;
+  background: radial-gradient(#ffffff, #ffffff, #99a1f5b6);
+  box-shadow: 0 0px 20px 1px rgba(255, 255, 255, 0.8);
   z-index: 3;
 }
 .lowerBody {
@@ -157,11 +216,13 @@ body {
 .leftLeg {
   display: flex;
   position: relative;
-  width: 20px;
-  height: 40px;
-  border: 1px solid black;
-  background-color: blue;
-  animation: leftLegMove 0.3s ease-in-out forwards infinite;
+  width: 50px;
+  height: 8px;
+  /* border: 1px solid black; */
+  background: radial-gradient(#ffffff, #4d59e6);
+  border-radius: 150px 150px 150px 150px;
+  animation: leftLegMove 0.7s ease-in-out forwards infinite;
+  /* animation: leftLegMove 0.3s infinite; */
 }
 .rightLeg {
   display: flex;
@@ -177,21 +238,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+
+  width: 90%;
   height: 200px;
-  border: 1px solid black;
+  border: 3px solid #f92c85;
   color: white;
-  background: rgb(180, 115, 233);
-  letter-spacing: 25px;
+  background: #fdf5df;
+  border-radius: 45px;
+  margin: 15px;
+
+  /* letter-spacing: 25px; */
 }
 .plays {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 200px;
-  border: 1px solid black;
-  background: rgb(180, 115, 233);
+  border: 3px solid #f92c85;
+  background: #fdf5df;
+  border-radius: 45px;
+  margin: 15px;
 }
 .gamePlays {
   display: flex;
@@ -200,7 +267,7 @@ body {
   position: relative;
   width: 100px;
   height: 100px;
-  background-color: coral;
+  background-color: #5ebec4;
   margin: 10px;
   animation: createBox 0.2s;
   color: white;
@@ -232,6 +299,7 @@ body {
   animation: createBox 0.2s;
   color: white;
   border-radius: 360px;
+  /* font-size: 90px; */
 }
 .up {
   display: flex;
@@ -337,99 +405,99 @@ body {
 }
 @keyframes leftArmMoveDanceLeft {
   0% {
-    transform: rotate(50deg);
+    transform: rotate(60deg);
     transform-origin: top right;
     /* z-index: 3; */
   }
   25% {
-    transform: rotate(10deg);
+    transform: rotate(20deg);
     transform-origin: top right;
   }
   50% {
-    transform: rotate(50deg);
+    transform: rotate(60deg);
     transform-origin: top right;
   }
   75% {
-    transform: rotate(10deg);
+    transform: rotate(20deg);
     transform-origin: top right;
     z-index: 3;
   }
   100% {
-    transform: rotate(50deg);
+    transform: rotate(60deg);
     transform-origin: top right;
   }
 }
 
 @keyframes rightArmMoveDanceLeft {
   0% {
-    transform: rotate(50deg);
+    transform: rotate(60deg);
     transform-origin: top left;
     /* z-index: 3; */
   }
   25% {
-    transform: rotate(10deg);
+    transform: rotate(20deg);
     transform-origin: top left;
   }
   50% {
-    transform: rotate(50deg);
+    transform: rotate(60deg);
     transform-origin: top left;
   }
   75% {
-    transform: rotate(10deg);
+    transform: rotate(20deg);
     transform-origin: top left;
     /* z-index: 3; */
   }
   100% {
-    transform: rotate(50deg);
+    transform: rotate(60deg);
     transform-origin: top left;
   }
 }
 @keyframes leftArmMoveDanceRight {
   0% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
     transform-origin: top right;
     /* z-index: 3; */
   }
   25% {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
     transform-origin: top right;
   }
   50% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
     transform-origin: top right;
   }
   75% {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
     transform-origin: top right;
     /* z-index: 3; */
   }
   100% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
     transform-origin: top right;
   }
 }
 
 @keyframes rightArmMoveDanceRight {
   0% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
     transform-origin: top left;
     z-index: 3;
   }
   25% {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
     transform-origin: top left;
   }
   50% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
     transform-origin: top left;
   }
   75% {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
     transform-origin: top left;
     z-index: 3;
   }
   100% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
     transform-origin: top left;
   }
 }
@@ -486,18 +554,23 @@ body {
 
 @keyframes leftLegMove {
   0% {
-    transform: scale(1);
-    transform-origin: top;
-  }
-  50% {
-    transform: scale(0.7);
-    transform-origin: top;
+    transform: translate(0, 0px);
+    width: 50px;
+    /* transform: scale(1); */
+    /* width: 100%; */
   }
   100% {
-    transform: scale(1);
-    transform-origin: top;
+    transform: translate(0, 25px);
+    width: 10px;
+    /* transform: scale(0.5); */
+    /* width: 50%; */
   }
+  /* 100% {
+    transform: translate(0, -0px);
+    width: 120%;
+  } */
 }
+
 @keyframes rightLegMove {
   0% {
     transform: scale(0.7);
@@ -527,9 +600,21 @@ body {
 }
 @keyframes shrink {
   from {
-    width: 100%;
+    width: 80%;
   }
   to {
     width: 0%;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
   }
 }
