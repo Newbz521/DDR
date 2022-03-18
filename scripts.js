@@ -22,7 +22,7 @@ document.addEventListener('keydown', function(e) {
   switch (e.keyCode) {
       case 37:
       // console.log('left');
-      if (plays.length < 4) {
+      if (plays.length < 8) {
         plays.push("⬅");
         let x = document.createElement('div')
         x.classList.add("left")
@@ -30,20 +30,17 @@ document.addEventListener('keydown', function(e) {
         playField.appendChild(x)
       
       }
-      // moveLeft -= 1;
       leftArm.style = "animation: leftArmMoveDanceLeft 2s ease-in-out forwards infinite;"
       rightArm.style = "animation: rightArmMoveDanceLeft 2s ease-in-out forwards infinite;"
-
           break;
 
       case 39:
       // console.log('right');
-      if (plays.length < 4) {
+      if (plays.length < 8) {
         plays.push("➡");
         let x = document.createElement('div')
         x.classList.add("right")
         x.innerText = "➡"
-        // x.style = "font-size: 90px;"
         playField.appendChild(x)}
         leftArm.style = "animation: leftArmMoveDanceRight 2s ease-in-out forwards infinite;"
       rightArm.style = "animation: rightArmMoveDanceRight 2s ease-in-out forwards infinite;"
@@ -52,7 +49,7 @@ document.addEventListener('keydown', function(e) {
     
       case 38:
       // console.log('up');
-      if (plays.length < 4) {
+      if (plays.length < 8) {
         plays.push("⬆");
         let x = document.createElement('div')
         x.classList.add("up")
@@ -64,7 +61,7 @@ document.addEventListener('keydown', function(e) {
       break;
       case 40:
       // console.log('down');
-      if (plays.length < 4) {
+      if (plays.length < 8) {
         plays.push("⬇");
         let x = document.createElement('div')
         x.classList.add("down")
@@ -83,7 +80,7 @@ document.addEventListener('keydown', function(e) {
       console.log(plays)
       plays = [];
       console.log(plays)
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 8; i++) {
         remove()
         // checkScore()
       }
@@ -109,51 +106,33 @@ let bestScore = function () {
   scores.push(counter);
   scores.sort();
   previous.innerText = scores[scores.length - 1]
-  console.log(scores)
+  // console.log(scores)
   // setTimeout()
 }
-setInterval(bestScore(), 20000)
+setInterval(bestScore(), 30000)
 
 let startTimer = function () {
   timeCount()
-  // setInterval(function () { previous.innerText = counter }, 20000)
-  setInterval(bestScore, 20000)
-  setInterval(function () { counter = 0 }, 20000)
-  setInterval(function () { scores.shift();}, 40000)
-  
+  setInterval(bestScore, 30000)
+  setInterval(function () { counter = 0 }, 30000)
+  setInterval(function () { scores.shift();}, 30000)
 }
-
-// setInterval(function () { scores.shift() }, 40000)
-
 startTimer()
 
-// console.log(scores)
-
 console.log(plays)
-
-let choices = ["⬅", "➡", "⬆", "⬇"]
-
+let choices = ["⬅", "➡", "⬆", "⬇","⬅", "➡", "⬆", "⬇"]
 let remove = function () {
   playField.removeChild(playField.lastElementChild)
   // game.removeChild(game.lastElementChild)
 }
-
 function shuffle(array) {
   let currentIndex = array.length, randomIndex;
-
-  // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
-
-  // return array;
   for (let i = 0; i< array.length; i++) {
     // game.innerText += (array[i])
     let createGame = document.createElement("div")
@@ -171,14 +150,12 @@ let isEqaul = (arrOne, arrTwo) => {
   let equal = true;
   for (let i = 0; i < arrOne.length; i++) {
     if (!(arrOne[i] === arrTwo[i])) {
-      //do stuff
       equal = false;
     }
   }
   
 
   if (equal) {
-    // console.log("plus one point");
     counter++ 
     points.innerText = `${counter}`
     eyes.style = "background: radial-gradient(hsl(145, 100%, 72%), hsl(145, 100%, 72%));"
@@ -187,18 +164,14 @@ let isEqaul = (arrOne, arrTwo) => {
     setTimeout(function () { eyes2.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
     // console.log(counter)
   } else {
-    // console.log("minus one point");
     counter--
     points.innerText = `${counter}`
-    // let eyes = document.querySelector(".eyes")
     eyes.style = "background: radial-gradient(rgb(255, 61, 61),rgb(255, 61, 61));"
     eyes2.style = "background: radial-gradient(rgb(255, 61, 61),rgb(255, 61, 61));"
     setTimeout(function () { eyes.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
     setTimeout(function () { eyes2.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
   }
 };
-// background: radial-gradient(#1f48fc, #4762f8);
-
 
 let compare = function () {
 isEqaul(choices, plays)
