@@ -12,12 +12,11 @@ let face = document.querySelector(".head")
 let eyes = document.querySelector(".eyes")
 let eyes2= document.querySelector(".eyes2")
 let plays = [];
+let scores = []
 let counter = 0;
-console.log(leftArm)
-console.log(eyes)
-// let gamePlays = [];
 
 
+//Give each arrow key a input direction/ + append div class for visual
 document.addEventListener('keydown', function(e) {
   switch (e.keyCode) {
       case 37:
@@ -70,10 +69,11 @@ document.addEventListener('keydown', function(e) {
       }
       leftArm.style = "animation: leftArmMove 2s ease-in-out forwards infinite;"
       rightArm.style =  "animation: rightArmMove 2s ease-in-out forwards infinite;"
-        break;
+      break;
+    
       case 32:
         // console.log('down');
-     
+      // Have spacebar check for score and reset the player input. In addition recall the shuffle .
       compare();
       game.innerText = "";
       setTimeout(shuffle(choices), 1000);
@@ -82,7 +82,6 @@ document.addEventListener('keydown', function(e) {
       console.log(plays)
       for (let i = 0; i < 8; i++) {
         remove()
-        // checkScore()
       }
          break;
   }
@@ -94,20 +93,17 @@ let time = 20
 let timeCount = function () {
     setInterval(timeDrop, 1000)
 }
-
 let timeDrop = function () {
   time -= 1
 }
 
-let scores = []
-// scores.length = 2;
+
+
 
 let bestScore = function () {
   scores.push(counter);
   scores.sort();
   previous.innerText = scores[scores.length - 1]
-  // console.log(scores)
-  // setTimeout()
 }
 setInterval(bestScore(), 30000)
 
@@ -120,11 +116,15 @@ let startTimer = function () {
 startTimer()
 
 console.log(plays)
+
+
 let choices = ["⬅", "➡", "⬆", "⬇","⬅", "➡", "⬆", "⬇"]
 let remove = function () {
   playField.removeChild(playField.lastElementChild)
   // game.removeChild(game.lastElementChild)
 }
+
+//Shuffle available choices and append visual div for upper display
 function shuffle(array) {
   let currentIndex = array.length, randomIndex;
   while (currentIndex != 0) {
@@ -145,7 +145,7 @@ function shuffle(array) {
 shuffle(choices); 
 
 
-
+// Check if player input and computer generated input match. Log the scores + visual queue if correct or not.
 let isEqaul = (arrOne, arrTwo) => {
   let equal = true;
   for (let i = 0; i < arrOne.length; i++) {
@@ -153,8 +153,6 @@ let isEqaul = (arrOne, arrTwo) => {
       equal = false;
     }
   }
-  
-
   if (equal) {
     counter++ 
     points.innerText = `${counter}`
