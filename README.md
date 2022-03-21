@@ -11,8 +11,10 @@ Game for testing your reaction / preciseness when it comes to keyboard commands.
 ### Playing Instructions
 
 - The top bar will automatically generate shuffled directional keys.
+
   ![alt text](gameBlock.png)
   ![alt text](https://sites.google.com/site/introductiontokeyboardingcmpld/_/rsrc/1330626419719/home/parts-of-the-keyboard/cursor-control-keys/arrow-keys/Arrows.png)
+
 - Use your "left", "right", "up", "down" arrows keys to match the random shuffled directions on the top output.
   ![alt text](https://sites.google.com/site/introductiontokeyboardingcmpld/_/rsrc/1330375656697/home/space-bar/SpaceBar.png)
 - Press your "spacebar" key after you match to your best of your abilities to check accuracy.
