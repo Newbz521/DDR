@@ -4,6 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   /* background: linear-gradient(#afb5f5, #ffffff); */
+  /* position: absolute; */
 }
 .PlayField {
   display: flex;
@@ -22,8 +23,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  float: left;
-  width: 380px;
+  /* float: left; */
+  width: 80%;
   justify-self: end;
   height: 10px;
   /* border: 1px solid black; */
@@ -186,6 +187,7 @@ body {
 }
 .leftArm {
   display: flex;
+
   margin-top: 5px;
   width: 15px;
   height: 100px;
@@ -239,7 +241,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  width: 90%;
+  width: 95%;
   height: 200px;
   border: 3px solid #f92c85;
   color: white;
@@ -253,7 +255,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 95%;
   height: 200px;
   border: 3px solid #f92c85;
   background: #fdf5df;
@@ -504,7 +506,7 @@ body {
 
 @keyframes leftArmMoveDanceUp {
   0% {
-    transform: rotate(110deg);
+    transform: rotate(150deg);
     transform-origin: top right;
     z-index: 3;
   }
@@ -513,7 +515,7 @@ body {
     transform-origin: top right;
   }
   50% {
-    transform: rotate(110deg);
+    transform: rotate(150deg);
     transform-origin: top right;
   }
   75% {
@@ -522,14 +524,14 @@ body {
     z-index: 3;
   }
   100% {
-    transform: rotate(110deg);
+    transform: rotate(150deg);
     transform-origin: top right;
   }
 }
 
 @keyframes rightArmMoveDanceUp {
   0% {
-    transform: rotate(-110deg);
+    transform: rotate(-150deg);
     transform-origin: top left;
     z-index: 3;
   }
@@ -538,7 +540,7 @@ body {
     transform-origin: top left;
   }
   50% {
-    transform: rotate(-110deg);
+    transform: rotate(-150deg);
     transform-origin: top left;
   }
   75% {
@@ -547,7 +549,7 @@ body {
     z-index: 3;
   }
   100% {
-    transform: rotate(-110deg);
+    transform: rotate(-150deg);
     transform-origin: top left;
   }
 }

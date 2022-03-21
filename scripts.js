@@ -164,7 +164,7 @@ let isEqaul = (arrOne, arrTwo) => {
     setTimeout(function () { eyes2.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
     // console.log(counter)
   } else {
-    counter--
+    // counter--
     points.innerText = `${counter}`
     eyes.style = "background: radial-gradient(rgb(255, 61, 61),rgb(255, 61, 61));"
     eyes2.style = "background: radial-gradient(rgb(255, 61, 61),rgb(255, 61, 61));"
