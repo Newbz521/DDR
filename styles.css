@@ -340,6 +340,19 @@ h2 {
   color: white;
   font-size: 22px;
   bottom: 20%;
+  animation: popInAndOut 2s ease-in-out infinite;
+}
+
+@keyframes popInAndOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes headBoggle {
