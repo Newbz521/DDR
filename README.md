@@ -8,9 +8,10 @@ Game for testing your reaction / preciseness when it comes to keyboard commands.
 
 ### Playing Instructions
 
-- Using your "left", "right", "up", "down" arrows keys to match the computers output.
-- Press your "spacebar" key to submit your dance moves!
-- Remember that you are timed for 30 seconds each round!
+- The top bar will automatically generate shuffled directional keys.
+- Use your "left", "right", "up", "down" arrows keys to match the random shuffled directions on the top output.
+- Press your "spacebar" key after you match to your best of your abilities to check accuracy.
+- Game will automatically run every 30 seconds.
 - Your Highest score will be automatically recorded.
 
 ## Authors

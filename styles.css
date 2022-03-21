@@ -108,7 +108,7 @@ body {
   border-radius: 120px 120px 75px 75px;
   margin-bottom: 0px;
   animation: headBoggle 2s ease-in-out forwards infinite;
-  box-shadow: 0 0px 20px 1px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0px 40px 5honopx rgba(255, 255, 255, 0.8);
 }
 .face {
   display: flex;

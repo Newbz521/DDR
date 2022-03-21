@@ -20,7 +20,6 @@ let counter = 0;
 document.addEventListener('keydown', function(e) {
   switch (e.keyCode) {
       case 37:
-      // console.log('left');
       if (plays.length < 8) {
         plays.push("⬅");
         let x = document.createElement('div')
@@ -34,7 +33,6 @@ document.addEventListener('keydown', function(e) {
           break;
 
       case 39:
-      // console.log('right');
       if (plays.length < 8) {
         plays.push("➡");
         let x = document.createElement('div')
@@ -47,7 +45,6 @@ document.addEventListener('keydown', function(e) {
       break;
     
       case 38:
-      // console.log('up');
       if (plays.length < 8) {
         plays.push("⬆");
         let x = document.createElement('div')
@@ -59,7 +56,6 @@ document.addEventListener('keydown', function(e) {
       rightArm.style =  "animation: rightArmMoveDanceUp 2s ease-in-out forwards infinite;"
       break;
       case 40:
-      // console.log('down');
       if (plays.length < 8) {
         plays.push("⬇");
         let x = document.createElement('div')
@@ -72,7 +68,6 @@ document.addEventListener('keydown', function(e) {
       break;
     
       case 32:
-        // console.log('down');
       // Have spacebar check for score and reset the player input. In addition recall the shuffle .
       compare();
       game.innerText = "";
@@ -99,7 +94,7 @@ let timeDrop = function () {
 
 
 
-
+//Store score of each play, then take the highets score with sort and taking the highest index
 let bestScore = function () {
   scores.push(counter);
   scores.sort();
@@ -107,6 +102,7 @@ let bestScore = function () {
 }
 setInterval(bestScore(), 30000)
 
+//Set function to grab score from previous play, then reset the score for the next game.
 let startTimer = function () {
   timeCount()
   setInterval(bestScore, 30000)
@@ -115,13 +111,12 @@ let startTimer = function () {
 }
 startTimer()
 
-console.log(plays)
+// console.log(plays)
 
 
 let choices = ["⬅", "➡", "⬆", "⬇","⬅", "➡", "⬆", "⬇"]
 let remove = function () {
   playField.removeChild(playField.lastElementChild)
-  // game.removeChild(game.lastElementChild)
 }
 
 //Shuffle available choices and append visual div for upper display
@@ -147,7 +142,7 @@ shuffle(choices);
 
 // Check if player input and computer generated input match. Log the scores + visual queue if correct or not.
 let isEqaul = (arrOne, arrTwo) => {
-  let equal = true;
+  let equal = true; // Helps compare the entirety of the array.
   for (let i = 0; i < arrOne.length; i++) {
     if (!(arrOne[i] === arrTwo[i])) {
       equal = false;
@@ -160,7 +155,7 @@ let isEqaul = (arrOne, arrTwo) => {
     eyes2.style = "background: radial-gradient(hsl(145, 100%, 72%), hsl(145, 100%, 72%));"
     setTimeout(function () { eyes.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
     setTimeout(function () { eyes2.style = "background: radial-gradient(#1f48fc, #4762f8);" }, 800)
-    // console.log(counter)
+
   } else {
     // counter--
     points.innerText = `${counter}`
@@ -173,10 +168,9 @@ let isEqaul = (arrOne, arrTwo) => {
 
 let compare = function () {
 isEqaul(choices, plays)
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 8; i++) { 
       game.innerText = (choices[i] + " ");
     }
-  // console.log(choices)
 }
 
 
