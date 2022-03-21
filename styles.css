@@ -330,6 +330,18 @@ body {
   /* size: 20px; */
   border-radius: 360px;
 }
+
+h2 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  bottom: 20%;
+}
+
 @keyframes headBoggle {
   0% {
     transform: rotate(10deg);
